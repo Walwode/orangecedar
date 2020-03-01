@@ -21,7 +21,7 @@ while ($sensor = $result->fetch_assoc()) {
 			$hibiscusSouthVoltage = $sensor["value"];
 		}
 	}
-	if ($sensor["mac"] == "BC:DD:C2:FD:D9:8D") {
+	if ($sensor["mac"] == "EC:FA:BC:61:F9:24") {
 		$bathroomWindowHeartbeat = date("H:i", $sensor["dateTime"]);
 		if ($sensor["sensor"] == 'window') {
 			if ($sensor["value"] == '1') {
@@ -39,8 +39,10 @@ $result->close();
 closeSqlInterface();
 
 $output = array();
-$output[] = sprintf("Hibiskus Lang %sh (%sv) %s", $hibiscusSouthHumidity, $hibiscusSouthVoltage, $hibiscusSouthHeartbeat);
-$output[] = sprintf("Bad Fenster %s (%sv) %s", $bathroomWindowClosed, $bathroomWindowVoltage, $bathroomWindowHeartbeat);
+$output[0]["name"] = sprintf("Hibiskus Lang %sh", $hibiscusSouthHumidity);
+$output[0]["value"] = sprintf("%s (%sv)", $hibiscusSouthHeartbeat, $hibiscusSouthVoltage);
+$output[1]["name"] = sprintf("Bad Fenster %s", $bathroomWindowClosed);
+$output[1]["value"] = sprintf("%s (%sv)", $bathroomWindowHeartbeat, $bathroomWindowVoltage);
 
 echoJson($output);
 ?>

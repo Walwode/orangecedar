@@ -21,7 +21,6 @@ void setup() {
   Serial.begin(115200);
   Serial.println();
 
-  digitalWrite(D3, HIGH);
   if (!connectWiFi()) { delay(5000); ESP.restart(); }
 
   createData();

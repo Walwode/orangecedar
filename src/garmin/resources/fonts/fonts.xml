@@ -1,0 +1,7 @@
+<fonts>
+	<font id="SegoeCondensed120" filename="segoe-ui-120.fnt" antialias="true" filter=" 0123456789:.-%"/>
+	<font id="SegoeCondensed120Bold" filename="segoe-ui-bold-120.fnt" antialias="true" filter=" 0123456789:.-%"/>
+	<font id="SegoeCondensed32" filename="segoe-condensed-32.fnt" antialias="true" filter=" 0123456789:.-%"/>
+	<font id="SegoeUi32Bold" filename="segoe-ui-bold-32.fnt" antialias="true" filter=" !#$%()*+,-./0123456789:;=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~"/>
+	<font id="SegoeUi24Bold" filename="segoe-ui-bold-24.fnt" antialias="true" filter=" !#$%()*+,-./0123456789:;=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~"/>
+</fonts>
