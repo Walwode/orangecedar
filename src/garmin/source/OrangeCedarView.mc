@@ -27,29 +27,32 @@ class OrangeCedarView extends Ui.View {
         
         if (response) {
 	        dc.setColor(Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT);
-            for (var i = 0; i < response.size(); ++i) {
-                Sys.println(response[i]);
-		        dc.drawText(
-		            dc.getWidth() / 2,
-		            dc.getHeight() * (i + 1) / (response.size() + 1) - 9,
-		            fonts["NORMAL"],
-		            response[i]["name"],
-		            Gfx.TEXT_JUSTIFY_CENTER | Gfx.TEXT_JUSTIFY_VCENTER);
-		        dc.drawText(
-		            dc.getWidth() / 2,
-		            dc.getHeight() * (i + 1) / (response.size() + 1) + 9,
-		            fonts["NORMAL"],
-		            response[i]["value"],
-		            Gfx.TEXT_JUSTIFY_CENTER | Gfx.TEXT_JUSTIFY_VCENTER);
-            }
+            dc.drawText(
+                dc.getWidth() / 2,
+                dc.getHeight() / 3 - 9,
+                fonts["NORMAL"],
+                response["hibiscusSouth"],
+                Gfx.TEXT_JUSTIFY_CENTER | Gfx.TEXT_JUSTIFY_VCENTER);
+            dc.drawText(
+                dc.getWidth() / 2,
+                dc.getHeight() / 2 - 9,
+                fonts["NORMAL"],
+                response["calathea"],
+                Gfx.TEXT_JUSTIFY_CENTER | Gfx.TEXT_JUSTIFY_VCENTER);
+            dc.drawText(
+                dc.getWidth() / 2,
+                2 * dc.getHeight() / 3 - 9,
+                fonts["NORMAL"],
+                response["bathroom"],
+                Gfx.TEXT_JUSTIFY_CENTER | Gfx.TEXT_JUSTIFY_VCENTER);            
         } else {
 	        var clockTime = System.getClockTime();
 	        dc.setColor(Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT);
 	        dc.drawText(
 	            dc.getWidth() / 2,
-	            dc.getHeight() / 2,
+	            dc.getHeight() / 2 - 9,
 	            Gfx.FONT_MEDIUM,
-	            Lang.format("$1$ $2$ $3$", [clockTime.hour.format("%02d"), clockTime.min.format("%02d"), clockTime.sec.format("%02d")]),
+	            "Requesting data...",
 	            Gfx.TEXT_JUSTIFY_CENTER | Gfx.TEXT_JUSTIFY_VCENTER);
         }
     }
